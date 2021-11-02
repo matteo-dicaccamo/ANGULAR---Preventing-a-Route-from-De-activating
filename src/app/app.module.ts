@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { EventsListComponent } from './events-list/events-list.component';
+import { AddressFromParentComponent } from './address-from-parent/address-from-parent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EventsListComponent
+    EventsListComponent,
+    AddressFromParentComponent
   ],
   imports: [
     BrowserModule
