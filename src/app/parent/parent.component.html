@@ -1,5 +1,4 @@
-<div *ngIf="currentCounter">
-    <h1>Congratulations!</h1>
-    <h3>You set the parent's counter to: {{ currentCounter }}</h3>
-</div>
-<app-child (counterNow)="updateCounter($event)"></app-child>
+<app-child #stopTheTime></app-child>
+<button (click)="stopTheTime.stopTimer()" class="btn btn-primary">
+  Stop Timer
+</button>

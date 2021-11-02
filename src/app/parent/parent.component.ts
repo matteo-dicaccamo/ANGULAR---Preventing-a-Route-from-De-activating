@@ -6,13 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent.component.scss'],
 })
 export class ParentComponent implements OnInit {
-  currentCounter!: number;
-
   constructor() {}
 
   ngOnInit(): void {}
-
-  updateCounter(value: number) {
-    this.currentCounter = value;
-  }
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -6,19 +6,20 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./child.component.scss'],
 })
 export class ChildComponent implements OnInit {
-  @Output() counterNow = new EventEmitter<number>();
+  public stopped = false;
+  public counter: number = 0;
+  public intervalId!: any;
 
   constructor() {}
 
-  counter = 0;
-
   ngOnInit() {
-    setInterval(() => {
+    this.intervalId = setInterval(() => {
       this.counter++;
     }, 1000);
   }
 
-  buttonClicked() {
-    this.counterNow.emit(this.counter);
+  stopTimer() {
+    clearInterval(this.intervalId);
+    this.stopped = true;
   }
 }
