@@ -43,11 +43,11 @@ export class EventsListComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  setEventNameClass(value: any) {
-    if (value === 'InPerson') return ['in-person'];
+  setEventNameStyle(value: any): object {
+    if (value === 'InPerson') return { color: 'green' };
 
-    if (value === 'Online') return ['online'];
+    if (value === 'Online') return { color: 'red' };
 
-    return ['tbd'];
+    return { color: '#aaa' };
   }
 }
