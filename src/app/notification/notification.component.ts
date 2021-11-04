@@ -11,11 +11,11 @@ export class NotificationComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  successMsg(value: string) {
+  successToastr(value: string) {
     this.toastr.success(value);
   }
 
-  errorsMsg(value: string) {
+  errorToastr(value: string) {
     this.toastr.error(value);
   }
 
@@ -23,7 +23,7 @@ export class NotificationComponent implements OnInit {
     this.toastr.info(value);
   }
 
-  toastrWaring(value: string) {
+  warningToastr(value: string) {
     this.toastr.warning(value);
   }
 }
