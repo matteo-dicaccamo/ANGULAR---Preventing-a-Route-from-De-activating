@@ -16,20 +16,16 @@ export class EventsListComponent implements OnInit {
         city: 'London',
         country: 'England',
       },
+      format: 'InPerson',
     },
     {
       name: 'ng-conf 2037',
       date: '4/15/2037',
       time: '9am',
       onlineUrl: 'https://www.ng-conf.org/',
+      format: 'Online',
     },
     { name: 'Future Conf (Location/Url TBD)', date: '6/10/2037', time: '8am' },
-    {
-      name: 'ng-nl',
-      date: '4/15/2037',
-      time: '9am',
-      onlineUrl: 'http://ng-nl.org/',
-    },
     {
       name: 'UN Angular Summit',
       date: '6/10/2037',
@@ -39,7 +35,7 @@ export class EventsListComponent implements OnInit {
         city: 'New York',
         country: 'USA',
       },
-      onlineUrl: 'http://unangularsummit.org',
+      format: 'InPerson',
     },
   ];
   constructor() {}
