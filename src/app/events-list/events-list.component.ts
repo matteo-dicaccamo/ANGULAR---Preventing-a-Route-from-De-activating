@@ -38,7 +38,16 @@ export class EventsListComponent implements OnInit {
       format: 'InPerson',
     },
   ];
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  setEventNameClass(value: any) {
+    if (value === 'InPerson') return ['in-person'];
+
+    if (value === 'Online') return ['online'];
+
+    return ['tbd'];
+  }
 }
