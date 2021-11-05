@@ -12,17 +12,12 @@ export class EventDetailsComponent implements OnInit {
 
   constructor(
     private eventService: EventService,
-    private route: ActivatedRoute,
-    private router: Router
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.event = this.eventService.getEvent(
       +this.route.snapshot.params['eventId']
     );
-  }
-
-  returnToEvents() {
-    this.router.navigate(['']);
   }
 }

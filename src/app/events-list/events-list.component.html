@@ -21,6 +21,12 @@
                     {{ event.location.address }}, {{ event.location.city }}, {{ event.location.country }}
                 </td>
             </tr>
+            <tr>
+                <td><a [routerLink]="['/events', 42]">Invalid Event</a></td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+            </tr>
         </tbody>
     </table>
 </div>
