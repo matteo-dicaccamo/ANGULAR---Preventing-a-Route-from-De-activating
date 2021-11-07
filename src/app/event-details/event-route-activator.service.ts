@@ -1,11 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Router, ActivatedRouteSnapshot, CanActivate } from '@angular/router';
+import {
+  Router,
+  ActivatedRouteSnapshot,
+  CanActivate,
+  CanDeactivate,
+} from '@angular/router';
 import { EventService } from '../shared/event.service';
+import { EventDetailsComponent } from './event-details.component';
 
 @Injectable({
   providedIn: 'root',
 })
-export class EventRouteActivatorService implements CanActivate {
+export class EventRouteActivatorService
+  implements CanActivate, CanDeactivate<any>
+{
   constructor(private eventService: EventService, private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
@@ -18,5 +26,15 @@ export class EventRouteActivatorService implements CanActivate {
     }
 
     return eventExists;
+  }
+
+  canDeactivate(component: EventDetailsComponent) {
+    if (!component.reviewed) {
+      return window.confirm(
+        'You have not reviewed this event, you really want to quit?'
+      );
+    }
+
+    return true;
   }
 }

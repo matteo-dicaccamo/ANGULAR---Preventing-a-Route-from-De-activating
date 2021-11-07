@@ -17,7 +17,24 @@ import { EventRouteActivatorService } from './event-details/event-route-activato
     PageNotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [EventService, EventRouteActivatorService],
+  providers: [
+    EventService,
+    EventRouteActivatorService,
+
+    {
+      provide: 'canDeactivateDetailEvent',
+      useValue: checkDirtyState,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+export function checkDirtyState(component: EventDetailsComponent) {
+  if (!component.reviewed) {
+    return window.confirm(
+      'You have not reviewed this event, do you really want exit?'
+    );
+  }
+  return true;
+}

@@ -12,6 +12,7 @@ const appRoutes: Routes = [
     path: 'events/:eventId',
     component: EventDetailsComponent,
     canActivate: [EventRouteActivatorService],
+    canDeactivate: [EventRouteActivatorService],
   },
   { path: '404', component: PageNotFoundComponent },
   { path: '', redirectTo: '/events', pathMatch: 'full' },

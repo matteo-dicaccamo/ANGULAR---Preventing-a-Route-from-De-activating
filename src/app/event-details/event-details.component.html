@@ -7,6 +7,9 @@
         Address: {{ event?.location.address }}, {{ event?.location.city }}, {{ event?.location.country }}
     </div>
 </div>
-<div class="back">
+<div class="pad-top">
+    <input type="checkbox" (click)="toggleReviewed()" /> Reviewed
+</div>
+<div class="pad-top">
     <a [routerLink]="['/events']"> Back to events</a>
 </div>

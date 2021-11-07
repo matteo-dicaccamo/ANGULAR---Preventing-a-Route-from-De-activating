@@ -9,15 +9,19 @@ import { EventService } from '../shared/event.service';
 })
 export class EventDetailsComponent implements OnInit {
   event: any;
+  reviewed: boolean = false;
 
   constructor(
     private eventService: EventService,
-    private route: ActivatedRoute
+    private activatedRoute: ActivatedRoute
   ) {}
-
-  ngOnInit(): void {
+  ngOnInit() {
     this.event = this.eventService.getEvent(
-      +this.route.snapshot.params['eventId']
+      +this.activatedRoute.snapshot.params['eventId']
     );
+  }
+  toggleReviewed() {
+    this.reviewed = !this.reviewed;
+    console.log(this.reviewed);
   }
 }
